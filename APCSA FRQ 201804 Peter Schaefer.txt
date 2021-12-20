@@ -1,0 +1,28 @@
+public static int[] getColumn(int[][] arr2D, int c)
+{
+	int[] ret = new int[arr2D.length]; //+1 new int array of size arr2D.length
+
+	for(int r = 0; r < arr2D.length; r++)
+		ret[r] = arr2D[r][c]; //+1 +1 assigns elements, accesses all items
+	return ret; //+1 all elements from specified column in correct order
+}
+
+public static boolean isLatin(int[][] square)
+{
+	int[] checker = square[0];
+	boolean latin = true;
+	
+	if(containsDuplicates(checker)) //+1 calls containsDuplicates
+		return false;
+	
+	for(int r = 0; r < square.length; r++)
+	{
+		int[] rfocus = square[r];
+		int[] cfocus = getColumn(square, r); //+1 calls getColumn
+		latin = latin && !(containsDuplicates(rfocus)) && !(containsDuplicates(cfocus));
+		latin = latin && hasAllValues(checker, rfocus) && hasAllValues(checker, cfocus);
+		//+1 +1 applies hasAllValues, calls hasAllValues
+	}
+
+	return latin; //+1 returns true of all conditions are satisfied, false otherwise
+}

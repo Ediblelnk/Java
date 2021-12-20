@@ -1,0 +1,23 @@
+public class MultPractice implements StudyPractice //+1 implements
+{
+  private int istatic; //+1 private instance variables
+  private int ichange;
+
+  public MultPractice(int staticIn, int changeIn) //+2 constructor
+  {
+    istatic = staticIn;
+    ichange = changeIn;
+  }
+
+  public String getProblem() //+3 getProblem method
+  {
+    String ret = istatic + " TIMES " + ichange;
+    return ret;
+  }
+
+  public void nextProblem() //+2 nextProblem method 
+  {
+    ichange++;
+  }
+
+}
