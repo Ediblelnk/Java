@@ -1,42 +1,44 @@
 package ch10;
+
 //********************************************************************
-//Employee.java      
+//Employee.java
 //
 //Represents a general paid employee.
 //********************************************************************
-public class Employee extends StaffMember
-{
-protected String sSocialSecurityNumber;
-protected double dPayRate;
+public class Employee extends StaffMember {
 
-//-----------------------------------------------------------------
-//  Constructor: Sets up this employee with the specified
-//  information.
-//-----------------------------------------------------------------
-public Employee(String sInputName, String sInputAddress,
-          String sInputPhone,
-               String sSocSecNumber, double dInputRate)
-{
-  super(sInputName, sInputAddress, sInputPhone);
-  sSocialSecurityNumber = sSocSecNumber;
-  dPayRate = dInputRate;
-}
+    protected String sSocialSecurityNumber;
+    protected double dPayRate;
 
-//-----------------------------------------------------------------
-//  Returns information about an employee as a string.
-//-----------------------------------------------------------------
-public String toString()
-{
-  String sResult = super.toString();
-  sResult += "\nSocial Security Number: " + sSocialSecurityNumber;
-  return sResult;
-}
+    //-----------------------------------------------------------------
+    //  Constructor: Sets up this employee with the specified
+    //  information.
+    //-----------------------------------------------------------------
+    public Employee(
+        String sInputName,
+        String sInputAddress,
+        String sInputPhone,
+        String sSocSecNumber,
+        double dInputRate
+    ) {
+        super(sInputName, sInputAddress, sInputPhone);
+        sSocialSecurityNumber = sSocSecNumber;
+        dPayRate = dInputRate;
+    }
 
-//-----------------------------------------------------------------
-//  Returns the pay rate for this employee.
-//-----------------------------------------------------------------
-public double pay()
-{
- return dPayRate;
-}
+    //-----------------------------------------------------------------
+    //  Returns information about an employee as a string.
+    //-----------------------------------------------------------------
+    public String toString() {
+        String sResult = super.toString();
+        sResult += "\nSocial Security Number: " + sSocialSecurityNumber;
+        return sResult;
+    }
+
+    //-----------------------------------------------------------------
+    //  Returns the pay rate for this employee.
+    //-----------------------------------------------------------------
+    public double pay() {
+        return dPayRate;
+    }
 }
